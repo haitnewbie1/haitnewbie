@@ -1,0 +1,20 @@
+double fabs(double a){
+	if (a >= 0) return a;
+	else return a * (-1);
+}
+int main (){
+	int i, n;
+	float x, sum = 0, term, num, m;
+	cin >> x;
+	num = x;
+	m = 1;
+	i = 2;
+	do {
+		term = num/m;
+		num = -num*x*x;
+		m = m*i*(i+1);
+		sum = sum + term;
+		i = i+2; 
+	} while (fabs(term) > 0.00001);
+	cout << setprecision(4) << fixed << sum; 
+}
